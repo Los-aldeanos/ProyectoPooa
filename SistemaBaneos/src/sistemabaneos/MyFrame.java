@@ -12,13 +12,12 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collections;
-import java.util.Comparator;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -55,6 +54,8 @@ public class MyFrame extends JFrame implements ActionListener{
         setLayout(new BorderLayout());
        
         //El color del panel
+        Color color3=new Color(148,123,170);
+        Color color4=new Color(179,158,185);
         color=new Color(129,100,155);
         
         JPanel opciones=new JPanel(new BorderLayout());
@@ -64,38 +65,100 @@ public class MyFrame extends JFrame implements ActionListener{
         add(informacion,BorderLayout.CENTER);
         
         
-        JPanel home =new JPanel(new GridLayout(3,1));
-        JPanel home_im=new JPanel(new GridLayout(5,1,20,20));
-        home_im.setBackground(color);
+        JPanel home =new JPanel(new BorderLayout());
+        //JPanel home_im=new JPanel(new BorderLayout());
+        //home_im.setBackground(color);
         home.setBackground(color);
-        opciones.add(home);
+        opciones.add(home,BorderLayout.CENTER);
        
         //Opciones
-        JPanel Line = new JPanel(new BorderLayout());
-        Line.setBackground(color);
-        JPanel inicio= new JPanel(new FlowLayout());
-        JPanel Line2 = new JPanel(new BorderLayout());
-        JPanel tablas = new JPanel(new BorderLayout());
-        
+        JPanel inicio= new JPanel(new BorderLayout());
+        home.add(inicio,BorderLayout.CENTER);
         inicio.setBackground(color);
+        
+        JPanel pnlinicio=new JPanel(new FlowLayout());
+        inicio.add(pnlinicio,BorderLayout.NORTH);
+        pnlinicio.setBackground(color);
+        
+        JPanel Line2 = new JPanel(new BorderLayout());
+        inicio.add(Line2,BorderLayout.CENTER);
+        Line2.setBackground(color);
+        
+        JPanel tablas = new JPanel(new BorderLayout());
+        Line2.add(tablas,BorderLayout.CENTER);
+        tablas.setBackground(color);
+        JPanel nombre=new JPanel(new BorderLayout());
+        nombre.setBackground(color);
+        tablas.add(nombre,BorderLayout.NORTH);
+        
+        JLabel tabla=new JLabel("     Tablas");
+        JPanel dentro=new JPanel(new BorderLayout());
+        dentro.setBackground(color);
+        JPanel izquierda=new JPanel(new BorderLayout());
+        izquierda.setBackground(color);
+        izquierda.add(tabla,BorderLayout.WEST);
+        dentro.add(izquierda,BorderLayout.NORTH);
+        tabla.setForeground(color4);
+        JPanel baja3=new JPanel();
+        baja3.setBackground(color);
+        nombre.add(baja3,BorderLayout.NORTH);
+        nombre.add(dentro,BorderLayout.CENTER);
+        JPanel buttons=new JPanel(new GridLayout(3,1,20,20));
+        buttons.setBackground(color);
+        dentro.add(buttons,BorderLayout.CENTER);
+        //nombre.add(buttons,BorderLayout.CENTER);
+        
+        JButton viewBaneos=new JButton("Tabla de Baneos");
+        viewBaneos.setHorizontalAlignment(SwingConstants.LEFT);
+        viewBaneos.setBorderPainted(false);
+        viewBaneos.setForeground(Color.WHITE);
+        viewBaneos.setBackground(color);
+        viewBaneos.addActionListener(this);
+        JButton Baneos=new JButton("Banear");
+        Baneos.setHorizontalAlignment(SwingConstants.LEFT);
+        Baneos.setBorderPainted(false);
+        Baneos.setForeground(Color.WHITE);
+        Baneos.setBackground(color);
+        Baneos.addActionListener(this);
+        JButton RemoveBan=new JButton("Remover Baneo");
+        RemoveBan.setHorizontalAlignment(SwingConstants.LEFT);
+        RemoveBan.setBorderPainted(false);
+        RemoveBan.setForeground(Color.WHITE);
+        RemoveBan.setBackground(color);
+        RemoveBan.addActionListener(this);
+        buttons.add(viewBaneos);
+        buttons.add(Baneos);
+        buttons.add(RemoveBan);
+        
         ImageIcon img=new ImageIcon(getClass().getResource("/imagenes/balu.png"));
         imagen=new JLabel(img);
         opciones.add(imagen,BorderLayout.NORTH);
         JLabel line=new JLabel("     ___________________________    ");
-         ImageIcon casita=new ImageIcon(getClass().getResource("/imagenes/casita.png"));
+        line.setForeground(color3);
+        JLabel line2=new JLabel("     ___________________________    ");
+        line2.setForeground(color3);
+        ImageIcon casita=new ImageIcon(getClass().getResource("/imagenes/casita.png"));
         imagen=new JLabel(casita);
         JButton lblInicio=new JButton("     Inicio");
-        Line.add(line,BorderLayout.NORTH);
-        inicio.add(imagen);
-        inicio.add(lblInicio);
+        lblInicio.setBorderPainted(false);
+        lblInicio.setBackground(color);
+        
+        
+        pnlinicio.add(imagen);
+        pnlinicio.add(lblInicio);
+        Line2.add(line2,BorderLayout.NORTH);
         lblInicio.setForeground(Color.WHITE);
-        line.setForeground(Color.WHITE);
-        //home.add(imagen);
+        
+        
+        //Primer panel
+        home.add(line,BorderLayout.NORTH);
+        
+        
         
        
-        home_im.add(Line);
-        home_im.add(inicio);
-        home.add(home_im);
+        //home_im.add(Line);
+        //home_im.add(inicio);
+        //home.add(home_im);
         
 
         //Informacion
@@ -110,6 +173,8 @@ public class MyFrame extends JFrame implements ActionListener{
         //Agregamos las cosas a cuenta
         JPanel panel_sup=new JPanel(new FlowLayout());
         JButton login=new JButton("Inicia sesión");
+        login.setBorderPainted(false);
+        login.setBackground(Color.WHITE);
         login.addActionListener(this);
        // login.setBackground(Color.WHITE);
         
@@ -152,56 +217,32 @@ public class MyFrame extends JFrame implements ActionListener{
         JPanel baja2=new JPanel();
         baja2.setBackground(Color.WHITE);
         pnlCopy.add(baja2,BorderLayout.SOUTH);
-
-
-
-        //los Panel que creamos,los agregamos al panel de Panel
-    
-        /*JButton boton=new JButton("|<");//para ir al Line
-        boton.addActionListener(this); //este boton le notificara a esta ventana sus eventos de accion
-        
-        boton.setEnabled(false);
-        controles[0]=boton;
-        
-        boton=new JButton("<");
-        boton.addActionListener(this);
-        //botones.add(boton);
-        boton.setEnabled(false);
-        controles[1]=boton;
-        
-        boton=new JButton(">");
-        boton.addActionListener(this);
-       // Panel.add(boton);
-        controles[2]=boton;
-        
-        boton=new JButton(">|");
-        boton.addActionListener(this);
-        //botones.add(boton);
-        controles[3]=boton;
-        */
-        
-       // add(imagen,BorderLayout.CENTER);
-        
         
     }
     @Override
     public void actionPerformed(ActionEvent ae) {
         String comando=ae.getActionCommand();//Devuelve la etiqueta del boton que presionado
         if(comando.equals("Inicia sesión")){//incrementamos el numero de la imagen actual
-            System.out.println("jala");
-        }
-        if(comando.equals("<")){//incrementamos el numero de la imagen actual
             
         }
-        if(comando.equals("|<")){//incrementamos el numero de la imagen actual
+        if(comando.equals("Remover Baneo")){//Abrimos la ventana emergente de remover baneos con hilos
+            //RemoverBaneos remove=new RemoverBaneos(this);
+        }
+        if(comando.equals("Banear")){//Abrimos la ventana emergente de banear con hilos
+            AplicarBaneos baneos=new AplicarBaneos(this);
+            
+            try{
+            Thread dlg=new Thread((Runnable) baneos);
+            dlg.start();
+            }catch(ClassCastException ex){
+                
+            }
+            
             
         }
-        if(comando.equals(">|")){//incrementamos el numero de la imagen actual
+        if(comando.equals("Tabla de Baneos")){//Abrimos una ventana emergente con hilos
             
         }
-        //una vez cambiado el indice de la imagen a mostrar, actualizamo el 
-        //texto para mostrar la imagen
-        //imagen.setText("<HTML><CENTER><img src=\"http://ing.ens.uabc.mx/~sinfante/img/Img"+img_num+".jpg\" /></CENTER></HTML>");
         
         
     }
