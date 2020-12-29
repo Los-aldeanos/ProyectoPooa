@@ -21,45 +21,42 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
   
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
-  <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
+  <!-- MAIN CONTENT -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="index.php">
+      <form class="form-login" action="principal.php">
         <h2 class="form-login-heading">Inicia ahora</h2>
         <div class="login-wrap">
+
           <input type="text" class="form-control" placeholder="Usuario" autofocus required>
           <br>
+
           <input type="password" class="form-control" placeholder="Contraseña" required>
+
           <label class="checkbox">
             <input type="checkbox" value="remember-me"> Recordar
             <span class="pull-right">
             <a data-toggle="modal" href="login.html#myModal"> Olvido la contraseña?</a>
             </span>
             </label>
-          <button class="btn btn-theme btn-block" href="index.php" type="submit"><i class="fa fa-lock"></i> Iniciar sesión</button>
+          <button class="btn btn-theme btn-block" href="principal.php" type="submit"><i class="fa fa-lock"></i> Iniciar sesión</button>
+
         </div>
+
         <!-- Modal -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Forgot Password ?</h4>
+                <h4 class="modal-title">Olvidaste la contraseña ?</h4>
               </div>
               <div class="modal-body">
-                <p>Enter your e-mail address below to reset your password.</p>
-                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                <p>Ingresa tu correo para recuperar la contraseña.</p>
+                <input type="text" name="emailprueba" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
               </div>
               <div class="modal-footer">
                 <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
