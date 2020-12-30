@@ -1,3 +1,45 @@
+<?php
+  require_once "config.php";
+
+  $var_code = $var_lang= $var_is_offi= $var_perc="";
+  $campos_vacios=false;
+
+  if ($_SERVER["REQUEST_METHOD"]=="POST"){
+    if(empty(trim($_POST["usuario"])))
+      $campos_vacios=true;
+    else
+      $var_code=trim($_POST["usuario"]);
+
+
+    if(empty(trim($_POST["clave"])))
+      $campos_vacios=true;
+    else
+      $var_lang=trim($_POST["clave"]);
+
+    if($campos_vacios==false)
+    {
+      $query = "INSERT INTO countrylanguage (CountryCode, Language, IsOfficial,Percentage) VALUES (?,?,?,?)";
+
+      if($statement = mysqli_prepare($link,$query))
+      {
+        mysqli_stmt_bind_param($statement,'ssss',$parm_code,$parm_lang,$parm_offi,$parm_percnt);
+
+        $parm_code= $var_code;
+        $parm_lang=$var_lang;
+        $parm_offi=$var_is_offi;
+        $parm_percnt=$var_perc;
+
+        if (mysqli_stmt_execute($statement))
+          mysqli_stmt_close($statement);
+        else
+          echo "No se logró enviar la información";
+
+      }
+    }
+    mysqli_close($link);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +69,7 @@
   <!-- MAIN CONTENT -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="validar.php">
+      <form class="form-login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"method ="post">
         <h2 class="form-login-heading">Inicia ahora</h2>
         <div class="login-wrap">
 
