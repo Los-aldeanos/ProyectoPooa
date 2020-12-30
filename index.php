@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Gym Spartakus</title>
+  <title>Gym Spartans</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -27,22 +27,22 @@
   <!-- MAIN CONTENT -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="principal.php">
+      <form class="form-login" action="validar.php">
         <h2 class="form-login-heading">Inicia ahora</h2>
         <div class="login-wrap">
 
-          <input type="text" class="form-control" placeholder="Usuario" autofocus required>
+          <input type="text" class="form-control" placeholder="Usuario" name="usuario" autofocus required>
           <br>
 
-          <input type="password" class="form-control" placeholder="Contraseña" required>
+          <input type="password" class="form-control" placeholder="Contraseña" name="clave" required>
 
           <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Recordar
+            <!--<input type="checkbox" value="remember-me"> Recordar
             <span class="pull-right">
-            <a data-toggle="modal" href="login.html#myModal"> Olvido la contraseña?</a>
+            <a data-toggle="modal" href="login.html#myModal"> Olvido la contraseña?</a>-->
             </span>
             </label>
-          <button class="btn btn-theme btn-block" href="principal.php" type="submit"><i class="fa fa-lock"></i> Iniciar sesión</button>
+          <button type="submit" class="btn btn-theme btn-block"> Iniciar sesión</button>
 
         </div>
 
@@ -76,7 +76,7 @@
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
   <script type="text/javascript" src="lib/jquery.backstretch.min.js"></script>
   <script>
-    $.backstretch("img/login-bg.jpg", {
+    $.backstretch("img/luis.jpg", {
       speed: 500
     });
   </script>
