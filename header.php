@@ -3,7 +3,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.php" class="logo"><b>Gym<span> Spartakus</span></b></a>
+      <a href="index.php" class="logo"><b>Gym<span> Spartaco</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->

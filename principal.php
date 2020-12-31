@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Gym Spartakus</title>
+  <title>Gym Spartaco</title>
 
   <!-- Favicons -->
   <link href="img/FAVI-Spart.png" rel="icon">
@@ -36,8 +36,8 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/ui-danro.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">S Soffes</h5>
+          <p class="centered"><a href="profile.php"><img src="img/luis.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Luis Rosas</h5>
           <li class="mt">
             <a class="active" href="principal.php">
               <i class="fa fa-dashboard"></i>
