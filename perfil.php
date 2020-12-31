@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Gym Spartakus</title>
+  <title>Gym Spartaco</title>
 
   <!-- Favicons -->
   <link href="img/FAVI-Spart.png" rel="icon">
@@ -68,7 +68,7 @@
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li><a href="Nuevacarpeta/basic_table.html">Basic Table</a></li>
+              <li><a href="basic_table.php">Basic Table</a></li>
               <li><a href="Nuevacarpeta/responsive_table.html">Responsive Table</a></li>
               <li><a href="advanced_table.php">Responsive Table</a></li>
             </ul>

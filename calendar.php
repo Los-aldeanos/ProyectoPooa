@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Gym Spartakus</title>
+  <title>Gym Spartaco</title>
 
   <!-- Favicons -->
   <link href="img/FAVI-Spart.png" rel="icon">
