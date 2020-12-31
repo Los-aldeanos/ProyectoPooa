@@ -42,10 +42,6 @@
           <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">S Soffes</h5>
           <li class="mt">
-            <a href="principal.php">
-              <i class="fa fa-dashboard"></i>
-              <span>Dashboard</span>
-              </a>
           </li>
           <li>
             <a href="calendar.php">
