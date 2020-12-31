@@ -10,7 +10,7 @@
   <title>Gym Spartans</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  <link href="img/FAVI-Spart.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
