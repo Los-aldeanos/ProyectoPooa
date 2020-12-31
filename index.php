@@ -27,7 +27,7 @@
 
       $filas=mysqli_num_rows($result);
       if ($filas > 0){
-        header('Location:calendar.php');
+        header('Location:table_user.php');
       }
       else{
         if($prueba==true){

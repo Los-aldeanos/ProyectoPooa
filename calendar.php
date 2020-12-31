@@ -39,6 +39,24 @@
           <li class="mt">
           </li>
           <li>
+            <a href="table_user.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de usuarios</span>
+              </a>
+          </li>
+          <li>
+            <a href="table_registros.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de registros</span>
+              </a>
+          </li>
+          <li>
+            <a href="table_citas.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de citas</span>
+              </a>
+          </li>
+          <li>
             <a class="active" href="calendar.php">
               <i class="fa fa-calendar-o"></i>
               <span>Calendario</span>
@@ -61,17 +79,6 @@
               <i class="fa fa-check"></i>
               <span>Creacion de usuario</span>
               </a>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="table_user.php">Tabla de usuarios</a></li>
-              <li><a href="table_citas.php">Tabla de citas</a></li>
-              <li><a href="table_registros.php">Tabla de registros</a></li>
-            </ul>
           </li>
           <li>
             <a href="perfil.php">

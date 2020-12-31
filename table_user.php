@@ -37,9 +37,23 @@
           <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">S Soffes</h5>
           <li class="mt">
-            <a href="principal.php">
-              <i class="fa fa-dashboard"></i>
-              <span>Dashboard</span>
+          </li>
+          <li>
+            <a class="active" href="table_user.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de usuarios</span>
+              </a>
+          </li>
+          <li>
+            <a href="table_registros.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de registros</span>
+              </a>
+          </li>
+          <li>
+            <a href="table_citas.php">
+              <i class="fa fa-th"></i>
+              <span>Tabla de citas</span>
               </a>
           </li>
           <li>
@@ -66,17 +80,6 @@
               <span>Creacion de usuario</span>
               </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-th"></i>
-              <span>Data Tables</span>
-              </a>
-            <ul class="sub">
-              <li><a href="table_user.php">Tabla de usuarios</a></li>
-              <li><a href="table_citas.php">Tabla de citas</a></li>
-              <li><a href="table_registros.php">Tabla de registros</a></li>
-            </ul>
-          </li>
           <li>
             <a href="perfil.php">
               <i class="fa fa-user"></i>
@@ -91,13 +94,13 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Basic Table Examples</h3>
+        <h3><i class="fa fa-angle-right"></i> Tabla de usuarios</h3>
         <!-- row -->
         <div class="row mt">
           <div class="col-md-12">
             <div class="content-panel">
               <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
+                <h4><i class="fa fa-angle-right"></i> Registrados</h4>
                 <thead>
                   <tr>
                     <th><i class="fa fa-bullhorn"></i> Usuarios</th>
@@ -112,62 +115,6 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Company Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12000.00$ </td>
-                    <td><span class="label label-info label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">
-                        Dashio co
-                        </a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>17900.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">
-                        Another Co
-                        </a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>14400.00$ </td>
-                    <td><span class="label label-success label-mini">Paid</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Dashio ext</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>22000.50$ </td>
-                    <td><span class="label label-success label-mini">Paid</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
                   <tr>
                     <td>
                       <a href="basic_table.html#">Total Ltd</a>
