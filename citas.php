@@ -73,9 +73,9 @@
               </a>
           </li>
           <li>
-            <a href="precios.php">
+            <a href="membresias.php">
               <i class="fa fa-money"></i>
-              <span>Precios</span>
+              <span>Membresias</span>
               </a>
           </li>
           <li>

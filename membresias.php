@@ -10,7 +10,7 @@
   <title>Gym Spartaco</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  <link href="img/FAVI-Spart.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
@@ -20,17 +20,18 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
-  
+
+
 </head>
 
 <body>
   <section id="container">
-    
+   
+    <!--header start-->
     <?php
-    include "header.php";
-    ?>
-    <!--sidebar start-->
-    <aside>
+      include "header.php";
+      ?>
+      <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
@@ -51,7 +52,7 @@
               </a>
           </li>
           <li>
-            <a class="active" href="table_citas.php">
+            <a href="table_citas.php">
               <i class="fa fa-th"></i>
               <span>Tabla de citas</span>
               </a>
@@ -69,7 +70,7 @@
               </a>
           </li>
           <li>
-            <a href="membresias.php">
+            <a class="active" href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
               </a>
@@ -91,52 +92,90 @@
       </div>
     </aside>
     <!--sidebar end-->
+    
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Tabla de citas</h3>
-        <!-- row -->
-        <div class="row mt">
-          <div class="col-md-12">
-            <div class="content-panel">
-              <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Citas registradas</h4>
-                <thead>
-                  <tr>
-                    <th><i class="fa fa-bullhorn"></i> Usuarios</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Total Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12120.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+      <section class="wrapper site-min-height">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div class="custom-box">
+                <div class="servicetitle">
+                  <h4>Standard</h4>
+                  <hr>
+                </div>
+                <div class="icn-main-container">
+                  <span class="icn-container">$25</span>
+                </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+                <ul class="pricing">
+                  <li>150 Mb Storage</li>
+                  <li>1 Domain</li>
+                  <li>2 Sub Domains</li>
+                  <li>3 MySQL DBs</li>
+                  <li>2 Emails</li>
+                  <li>WordPress Installation</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a class="btn btn-theme" href="#">Order Now</a>
+              </div>
+              <!-- end custombox -->
             </div>
-            <!-- /content-panel -->
+            <!-- end col-4 -->
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div class="custom-box">
+                <div class="servicetitle">
+                  <h4>Mega Pack</h4>
+                  <hr>
+                </div>
+                <div class="icn-main-container">
+                  <span class="icn-container">$55</span>
+                </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+                <ul class="pricing">
+                  <li>150 Mb Storage</li>
+                  <li>1 Domain</li>
+                  <li>2 Sub Domains</li>
+                  <li>3 MySQL DBs</li>
+                  <li>2 Emails</li>
+                  <li>WordPress Installation</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a class="btn btn-theme" href="#">Order Now</a>
+              </div>
+              <!-- end custombox -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div class="custom-box">
+                <div class="servicetitle">
+                  <h4>Ultra Pack</h4>
+                  <hr>
+                </div>
+                <div class="icn-main-container">
+                  <span class="icn-container">$98</span>
+                </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+                <ul class="pricing">
+                  <li>150 Mb Storage</li>
+                  <li>1 Domain</li>
+                  <li>2 Sub Domains</li>
+                  <li>3 MySQL DBs</li>
+                  <li>2 Emails</li>
+                  <li>WordPress Installation</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a class="btn btn-theme" href="#">Order Now</a>
+              </div>
+              <!-- end custombox -->
+            </div>
+            <!-- end col-4 -->
           </div>
-          <!-- /col-md-12 -->
+          <!--  /col-lg-12 -->
         </div>
-        <!-- /row -->
+        <!--  /row -->
       </section>
+      <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
@@ -150,7 +189,7 @@
           
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="basic_table.html#" class="go-top">
+        <a href="pricing_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -166,7 +205,7 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  
+
 </body>
 
 </html>

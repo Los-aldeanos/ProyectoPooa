@@ -31,6 +31,7 @@
       }
       else{
         if($prueba==true){
+
         echo "Error en la autentificacion";}
       }
     }
@@ -69,17 +70,34 @@
       <form class="form-login" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"method ="post">
         <h2 class="form-login-heading">Inicia ahora</h2>
         <div class="login-wrap">
-
           <input type="text" class="form-control" placeholder="Usuario" name="usuario" autofocus required><br>
-
           <input type="password" class="form-control" placeholder="Contraseña" name="clave" required><br>
-
           <button type="submit" class="btn btn-theme btn-block"> Iniciar sesión</button>
-
         </div>
-
       </form>
     </div>
+  </div>
+  <div>
+    <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Forgot Password ?</h4>
+              </div>
+              <div class="modal-body">
+                <p>Enter your e-mail address below to reset your password.</p>
+                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+              </div>
+              <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                <button class="btn btn-theme" type="button">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal -->
   </div>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
