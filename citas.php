@@ -82,7 +82,7 @@
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li><a href="Nuevacarpeta/basic_table.html">Basic Table</a></li>
+              <li><a href="basic_table.">Basic Table</a></li>
               <li><a href="Nuevacarpeta/responsive_table.html">Responsive Table</a></li>
               <li><a href="advanced_table.php">Responsive Table</a></li>
             </ul>
