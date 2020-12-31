@@ -67,9 +67,9 @@
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li><a href="basic_table.php">Basic Table</a></li>
-              <li><a href="Nuevacarpeta/responsive_table.html">Responsive Table</a></li>
-              <li><a href="advanced_table.php">Responsive Table</a></li>
+              <li><a href="table_user.php">Tabla de usuarios</a></li>
+              <li><a href="table_citas.php">Tabla de citas</a></li>
+              <li><a href="table_registros.php">Tabla de registros</a></li>
             </ul>
           </li>
           <li>

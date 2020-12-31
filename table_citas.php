@@ -72,9 +72,9 @@
               <span>Data Tables</span>
               </a>
             <ul class="sub">
-              <li><a href="basic_table.php">Basic Table</a></li>
-              <li><a href="Nuevacarpeta/responsive_table.html">Responsive Table</a></li>
-              <li><a href="advanced_table.php">Responsive Table</a></li>
+              <li><a href="table_user.php">Tabla de usuarios</a></li>
+              <li><a href="table_citas.php">Tabla de citas</a></li>
+              <li><a href="table_registros.php">Tabla de registros</a></li>
             </ul>
           </li>
           <li>
@@ -88,9 +88,6 @@
       </div>
     </aside>
     <!--sidebar end-->
-    <!-- **********************************************************************************************************************************************************
-        MAIN CONTENT
-        *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
@@ -203,12 +200,7 @@
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
+          
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
         <a href="basic_table.html#" class="go-top">
