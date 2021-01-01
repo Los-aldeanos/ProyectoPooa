@@ -103,31 +103,46 @@
                 <h4><i class="fa fa-angle-right"></i> Registrados</h4>
                 <thead>
                   <tr>
-                    <th><i class="fa fa-bullhorn"></i> Usuarios</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th></th>
+                    <th><i class="fa fa-bullhorn"></i> ID</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Usuario</th>
+                    <th><i class="fa fa-bookmark"></i> Nombre</th>
+                    <th><i class=" fa fa-edit"></i> Apellido paterno<o/th>
+                    <th><i class="fa fa-bookmark"></i> Apellido materno</th>
+                    <th><i class="fa fa-bookmark"></i> Edad</th>
+                    <th><i class="fa fa-bookmark"></i> Telefono</th>
+                    <th><i class="fa fa-bookmark"></i> Correo</th>
+                    <th><i class="fa fa-bookmark"></i> Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Total Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12120.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
+                  <?php
+                  require_once "config.php";
+
+                  $query ="select * from usuarios order by idusuarios limit 20";
+
+                  $result=mysqli_query($link,$query);
+                  while($row = mysqli_fetch_array($result)){
+                    $iduser=$row["idusuarios"];
+                    $username=$row["username"];
+                    $nombre=$row["nombre"];
+                    $ap_pat=$row["ap_paterno"];
+                    $ap_mat=$row["ap_materno"];
+                    $edad=$row["edad"];
+                    $tel=$row["telefono"];
+                    $correo=$row["correo"];
+
+                    
+                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td>";
+                    ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
+                      <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#Eliminar"><i class="fa fa-trash-o "></i></button>
                     </td>
-                  </tr>
+                    </tr>
+                      <?php
+                      }
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -138,7 +153,7 @@
         <!-- /row -->
       </section>
     </section>
-    <!-- /MAIN CONTENT -->
+    <!-- /MAIN CONTENT -->   
     <!--main content end-->
     <!--footer start-->
     <footer class="site-footer">
