@@ -76,7 +76,7 @@
           <li>
             <a class="active" href="usuarios.php">
               <i class="fa fa-check"></i>
-              <span>Creacion de usuario</span>
+              <span>Registrar usuario</span>
               </a>
           </li>
           <li>
@@ -100,27 +100,60 @@
             
             <div class="form-panel">
               <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="createuser.php">
                   <div class="form-group ">
-                    <label for="firstname" class="control-label col-lg-2">Primer nombre</label>
+                    <label class="control-label col-lg-2">Usuario</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="firstname" name="firstname" type="text" requered required />
+                      <input class=" form-control" id="user" name="usuario" type="text"required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2">Segundo nombre</label>
+                    <label class="control-label col-lg-2">Nombre</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" name="lastname" type="text" required />
+                      <input class=" form-control" id="name" name="nombre" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">Usuario</label>
+                    <label class="control-label col-lg-2">Apellido paterno</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" required />
+                      <input class="form-control " id="Ap_pat" name="ap_pat" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Contraseña</label>
+                    <label class="control-label col-lg-2">Apellido materno</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="Ap_mat" name="ap_mat" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Edad</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="edad" name="edad" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Telefono</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="tele" name="telefono" type="tel" pattern="[0-9]{3} [0-9]{3}[ -][0-9]{4}" title="Numero no valido, el formato requerido es: ??? ??? ????"
+                      placeholder="646 546 4659" required />
+                    </div>
+                  </div>
+                  <?php 
+                  $url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+                  
+                  if("localhost/ProyectoPooa/usuarios.php" != $url)
+                    {
+                      $var=$_GET['error'];
+                    if ($var ==1){
+                      echo "<div class='alert alert-danger'>Las contraseñas no son iguales</div>";  
+                    }
+                    }
+                  else{
+                    
+                    }
+                    ?>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Contraseña</label>
                     <div class="col-lg-10">
                       <input class="form-control " id="password" name=" password" type="password" required/>
                     </div>
@@ -129,7 +162,7 @@
                   <div class="form-group ">
                     <label for="confirm_password" class="control-label col-lg-2">Confirma contraseña</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name=" requiredconfirm_password" type="password" required/>
+                      <input class="form-control " id="confirm_password" name="requiredconfirm_password" type="password" required/>
                     </div>
                   </div>
                   <div class="form-group ">
@@ -138,18 +171,18 @@
                       <input class="form-control " id="email" name="email" type="email" required />
                     </div>
                   </div>
-                  <!--<div class="form-group ">
-                    <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
+                  <div class="form-group ">
+                    <label for="username" class="control-label col-lg-2">Tipo de usuario</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="tipo_user" name="tipo" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="newsletter" class="control-label col-lg-2 col-sm-3">Receive the Newsletter</label>
-                    <div class="col-lg-10 col-sm-9">
-                      <input type="checkbox" style="width: 20px" class="checkbox form-control" id="newsletter" name="newsletter" />
+                    <label for="username" class="control-label col-lg-2">Membresia</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="membresia" name="membresia" type="text" required />
                     </div>
-                  </div>-->
+                  </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-theme" type="submit">Guardar</button>
@@ -170,7 +203,6 @@
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="site-footer">
       <div class="text-center">
         <p>

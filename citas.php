@@ -81,7 +81,7 @@
           <li>
             <a href="usuarios.php">
               <i class="fa fa-check"></i>
-              <span>Creacion de usuario</span>
+              <span>Registrar usuario</span>
               </a>
           </li>
           <li>

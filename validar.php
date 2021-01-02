@@ -9,7 +9,7 @@ require_once "config.php";
         $edad=$_POST['edad'];
         $telefono=$_POST['telefono'];
         $correo=$_POST['correo'];
-        $sql="update usuarios set nombre='$nombre', ap_paterno='$paterno', ap_materno='$materno', edad=$edad, correo='$correo' WHERE idusuarios=$id;";
+        $sql="update usuarios set nombre='$nombre', ap_paterno='$paterno', ap_materno='$materno', edad=$edad,telefono='$telefono', correo='$correo' WHERE idusuarios=$id;";
         if(mysqli_query($link,$sql)){
             header('location:table_user.php');
         }
