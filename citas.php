@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+
+  if(empty($_SESSION['usuario'])){
+    session_start();
+    session_destroy();
+    header('location:index.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +48,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">S Soffes</h5>
+          <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
           <li>

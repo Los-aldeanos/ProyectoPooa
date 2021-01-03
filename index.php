@@ -27,12 +27,14 @@
 
       $filas=mysqli_num_rows($result);
       if ($filas > 0){
+        session_start();
+        $_SESSION['usuario']=$var_user;
+        echo $_SESSION['usuario'];
         header('Location:table_user.php');
       }
       else{
         if($prueba==true){
-
-        echo "Error en la autentificacion";}
+        header('Location:index.php');}
       }
     }
     mysqli_close($link);

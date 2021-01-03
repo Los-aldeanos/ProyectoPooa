@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+
+  if(empty($_SESSION['usuario'])){
+    session_start();
+    session_destroy();
+    header('location:index.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +44,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">S Soffes</h5>
+          <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
           <li>
@@ -108,7 +117,7 @@
               </div>
               <!-- /col-md-4 -->
               <div class="col-md-4 profile-text">
-                <h3>Sam Soffes</h3>
+                <?php echo "<h3>".$_SESSION['usuario'] ."</h3>" ?>
                 <h6>Main Administrator</h6>
                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
                 <br>

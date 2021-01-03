@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+
+  if(empty($_SESSION['usuario'])){
+    session_start();
+    session_destroy();
+    header('location:index.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +43,9 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-          <h5 class="centered">S Soffes</h5>
+          <?php
+          echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>"
+          ?>
           <li class="mt">
           </li>
           <li>
@@ -101,6 +112,20 @@
             <div class="form-panel">
               <div class="form">
                 <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="createuser.php">
+                  <?php 
+                  $url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+                  
+                  if("localhost/ProyectoPooa/usuarios.php" != $url)
+                    {
+                      $var=$_GET['error'];
+                    if ($var ==2){
+                      echo "<div class='alert alert-danger'>Usuario ya existente</div>";  
+                    }
+                    }
+                  else{
+                    
+                    }
+                    ?>
                   <div class="form-group ">
                     <label class="control-label col-lg-2">Usuario</label>
                     <div class="col-lg-10">
@@ -122,19 +147,19 @@
                   <div class="form-group ">
                     <label class="control-label col-lg-2">Apellido materno</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="Ap_mat" name="ap_mat" type="text" required />
+                      <input class="form-control " id="Ap_mat" name="ap_mat" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
                     <label class="control-label col-lg-2">Edad</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="edad" name="edad" type="text" required />
+                      <input class="form-control " id="edad" name="edad" type="text" pattern="[1-9][0-9]" title="La edad tiene que ser entre 10-99 años" required />
                     </div>
                   </div>
                   <div class="form-group ">
                     <label class="control-label col-lg-2">Telefono</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="tele" name="telefono" type="tel" pattern="[0-9]{3} [0-9]{3}[ -][0-9]{4}" title="Numero no valido, el formato requerido es: ??? ??? ????"
+                      <input class="form-control " id="tele" name="telefono" type="tel" pattern="[0-9]{3} [0-9]{3}[0-9]{4}|[0-9]{3} [0-9]{3}[ -][0-9]{4}|[0-9]{10}" title="Numero no valido, el formato requerido es: ??? ??? ???? o ??? ???????"
                       placeholder="646 546 4659" required />
                     </div>
                   </div>

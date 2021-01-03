@@ -3,6 +3,11 @@ require_once "config.php";
 
         $id=0;
         $username=$_POST['usuario'];
+        $sql="select * from usuarios where username='$username'";
+        $result=mysqli_query($link,$sql);
+
+        $filas=mysqli_num_rows($result);
+        if ($filas==0){
         $nombre=$_POST['nombre'];
         $paterno=$_POST['ap_pat'];
         $materno=$_POST['ap_mat'];
@@ -23,6 +28,10 @@ require_once "config.php";
         }
         else{
             header('location:usuarios.php?error=1');
+        }
+        }
+        else{
+            header('location:usuarios.php?error=2');   
         }
     mysqli_close($link);
 ?>
