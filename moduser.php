@@ -181,6 +181,9 @@
                       <input class="form-control " id="username" value="<?php echo $membresia; ?>" name="mem" type="text" />
                     </div>
                   </div>
+                  <div>
+                      <input type="hidden" name="option" value=1>
+                  </div>
                   <?php
                 }
                 ?>

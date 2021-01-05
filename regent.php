@@ -111,30 +111,33 @@
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel">
-              <form class="form-horizontal  style-form" action="#">
+              <form class="form-horizontal  style-form" action="validar.php" method="post">
                 <div class="form-group ">
                     <label class="control-label col-lg-2">Id de usuario</label>
                     <div class="col-lg-4">
-                      <input class=" form-control" id="user" name="usuario" type="text"required />
+                      <input class=" form-control" id="user" name="iduser" type="text" required />
                     </div>
                   </div>
                 <div class="form-group">
                   <label class="control-label col-md-2">Entrada</label>
                   <div class="col-md-4">
-                    <input  type="text"  readonly class="form_datetime form-control">
+                    <input  type="text"  readonly class="form_datetime form-control" name="f_entrada" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-2">Salida</label>
                   <div class="col-md-4">
-                    <input  type="text"  readonly class="form_datetime form-control">
+                    <input  type="text"  readonly class="form_datetime form-control" name="f_salida">
                   </div>
                 </div>
                 <div class="form-group ">
                     <label class="control-label col-lg-2">Numero de cita</label>
                     <div class="col-lg-4">
-                      <input size="10" class=" form-control" class="centered" id="user" name="usuario" type="text"required />
+                      <input size="10" class=" form-control" class="centered" id="user" name="numcita" type="text" required />
                     </div>
+                  </div>
+                  <div>
+                      <input type="hidden" name="option" value=2>
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">

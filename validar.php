@@ -1,6 +1,8 @@
 <?php
 require_once "config.php";
-
+    
+        $option=$_POST['option'];
+        if($option ==1){
         $id=$_POST['id'];
         $username=$_POST['usuario'];
         $nombre=$_POST['nombre'];
@@ -16,6 +18,23 @@ require_once "config.php";
         }
         else{
             echo "Ocurrio un problema al actualizar";
+        }}
+        else{
+        $idreg=0;
+        $id=$_POST['iduser'];
+        $entrada=$_POST['f_entrada'];
+        $salida=$_POST['f_salida'];
+        $cita=$_POST['numcita'];
+
+        $sql="insert into registros values($idreg,'$entrada','$salida',$cita,$id)";
+        echo $sql;
+        if(mysqli_query($link,$sql)){
+            header("location:table_registros.php");
         }
+        else{
+            
+            echo $option;
+            echo "Ocurrio un problema al ingresar el registro de entrada";
+        }}
     mysqli_close($link);
 ?>

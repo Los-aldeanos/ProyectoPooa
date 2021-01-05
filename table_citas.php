@@ -139,7 +139,7 @@
                     $idcitas=$row["idcitas"];
                     $citas=$row["citas"];
                     
-                    echo "<tr><td>$iduser</td><td>$username</td><td>$nombre</td><<td>$paterno</td><td>$materno</td><td>$idcitas</td><td>$citas</td>";
+                    echo "<tr><td>$iduser</td><td>$username</td><td>$nombre</td><td>$paterno</td><td>$materno</td><td>$idcitas</td><td>$citas</td>";
                     ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
