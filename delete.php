@@ -43,7 +43,7 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
-          <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
+           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
           <li>
@@ -102,14 +102,14 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Editar usuario</h3>
+        <h3><i class="fa fa-angle-right"></i> Eliminar usuario</h3>
         <!-- /row -->
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel">
               <div class="form">
 
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="validar.php">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="valdelete.php">
                   <?php
                   require_once "config.php";
                   $id=$_GET['id'];
@@ -186,7 +186,7 @@
                 ?>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit" name="actualizar">Guardar</button>
+                      <button class="btn btn-theme" type="submit" name="actualizar">Eliminar</button>
                       <button class="btn btn-theme04" onclick="location='table_user.php'" type="button">Cancelar</button>
                     </div>
                   </div>

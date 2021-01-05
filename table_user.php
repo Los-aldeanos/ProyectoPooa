@@ -42,7 +42,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -119,6 +119,7 @@
                     <th><i class="fa fa-bookmark"></i> Edad</th>
                     <th><i class="fa fa-bookmark"></i> Telefono</th>
                     <th><i class="fa fa-bookmark"></i> Correo</th>
+                    <th><i class="fa fa-bookmark"></i> Membresias</th>
                     <th><i class="fa fa-bookmark"></i> Acciones</th>
                   </tr>
                 </thead>
@@ -138,14 +139,30 @@
                     $edad=$row["edad"];
                     $tel=$row["telefono"];
                     $correo=$row["correo"];
-
+                    $membresia=$row["id_membresias"];
+                    if ($membresia ==0){
+                      $mem="Mensual";
+                    }
+                    elseif ($membresia==1) {
+                      $mem="Bimestral";
+                    }
+                    elseif ($membresia==2) {
+                      $mem="Trimestral";
+                    }
+                    elseif ($membresia==3) {
+                      $mem="Cuatrimestral";
+                    }
+                    elseif ($membresia==99) {
+                      $mem="Sin membresia";
+                    }
                     
-                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td>";
+                    
+                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td><td>$mem</td>";
                     ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                       <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
-                      <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#Eliminar"><i class="fa fa-trash-o "></i></button>
+                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
                     </td>
                     </tr>
                       <?php

@@ -43,7 +43,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -109,34 +109,38 @@
           <div class="col-md-12">
             <div class="content-panel">
               <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Citas registradas</h4>
+                <h4><i class="fa fa-angle-right"></i> Citas</h4>
                 <thead>
                   <tr>
-                    <th><i class="fa fa-bullhorn"></i> Usuarios</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Nombre</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th><i class="fa fa-bookmark"></i> Profit</th>
-                    <th><i class=" fa fa-edit"></i> Status</th>
-                    <th></th>
+                    <th><i class="fa fa-bullhorn"></i> Id usuario</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Id citas</th>
+                    <th><i class="fa fa-bookmark"></i> Cita</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <a href="basic_table.html#">Total Ltd</a>
-                    </td>
-                    <td class="hidden-phone">Lorem Ipsum dolor</td>
-                    <td>12120.00$ </td>
-                    <td><span class="label label-warning label-mini">Due</span></td>
+                  <?php
+                  require_once "config.php";
+
+                  $query ="select * from citas order by idcitas";
+
+                  $result=mysqli_query($link,$query);
+                  while($row = mysqli_fetch_array($result)){
+                    $iduser=$row["Usuarios_id_usuarios"];
+                    $citas=$row["citas"];
+                    $idcitas=$row["idcitas"];
+                    
+                    
+                    echo "<tr><td>$iduser </td><td>$idcitas</td><td>$citas</td>";
+                    ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
+                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
                     </td>
-                  </tr>
+                    </tr>
+                      <?php
+                      }
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -147,7 +151,7 @@
         <!-- /row -->
       </section>
     </section>
-    <!-- /MAIN CONTENT -->
+    <!-- /MAIN CONTENT -->   
     <!--main content end-->
     <!--footer start-->
     <footer class="site-footer">
