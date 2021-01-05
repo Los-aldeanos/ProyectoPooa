@@ -26,21 +26,24 @@
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-fileupload/bootstrap-fileupload.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-timepicker/compiled/timepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-datetimepicker/datertimepicker.css" />
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
-
 
 </head>
 
 <body>
   <section id="container">
-   
-    <!--header start-->
-    <?php
+      <?php
       include "header.php";
       ?>
-      <aside>
+    <!--sidebar start-->
+    <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
@@ -73,13 +76,13 @@
               </a>
           </li>
           <li>
-            <a class="active" href="membresias.php">
+            <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
               </a>
           </li>
           <li>
-            <a href="regent.php">
+            <a class="active" href="regent.php">
               <i class="fa fa-share"></i>
               <span>Registro de entradas</span>
               </a>
@@ -101,104 +104,71 @@
       </div>
     </aside>
     <!--sidebar end-->
-    
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper site-min-height">
-        <div class="row">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Registro de entradas</h3>
+        <div class="row mt">
           <div class="col-lg-12">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Standard</h4>
-                  <hr>
+            <div class="form-panel">
+              <form class="form-horizontal  style-form" action="#">
+                <div class="form-group ">
+                    <label class="control-label col-lg-2">Id de usuario</label>
+                    <div class="col-lg-4">
+                      <input class=" form-control" id="user" name="usuario" type="text"required />
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Entrada</label>
+                  <div class="col-md-4">
+                    <input  type="text"  readonly class="form_datetime form-control">
+                  </div>
                 </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$25</span>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Salida</label>
+                  <div class="col-md-4">
+                    <input  type="text"  readonly class="form_datetime form-control">
+                  </div>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
+                <div class="form-group ">
+                    <label class="control-label col-lg-2">Numero de cita</label>
+                    <div class="col-lg-4">
+                      <input size="10" class=" form-control" class="centered" id="user" name="usuario" type="text"required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Guardar</button>
+                      <button class="btn btn-theme04" type="button">Cancelar</button>
+                    </div>
+                  </div>
+              </form>
             </div>
-            <!-- end col-4 -->
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Mega Pack</h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$55</span>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-            <!-- end col-4 -->
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Ultra Pack</h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$98</span>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-            <!-- end col-4 -->
+            <!-- /form-panel -->
           </div>
-          <!--  /col-lg-12 -->
+          <!-- /col-lg-12 -->
         </div>
-        <!--  /row -->
+        <!-- row -->
       </section>
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
-    <!--main content end-->
     <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Gym Spartaco</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+            Licensing information: https://templatemag.com/license/
+          -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="pricing_table.html#" class="go-top">
+        <a href="advanced_form_components.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -214,6 +184,15 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/date.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/moment.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+  <script src="lib/advanced-form-components.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+        require_once "config.php";
 
         $id=0;
         $username=$_POST['usuario'];
@@ -9,6 +9,7 @@ require_once "config.php";
         $filas=mysqli_num_rows($result);
         if ($filas==0){
         $nombre=$_POST['nombre'];
+
         $paterno=$_POST['ap_pat'];
         $materno=$_POST['ap_mat'];
         $edad=$_POST['edad'];
@@ -17,6 +18,7 @@ require_once "config.php";
         $contraseña=$_POST['password'];
         $confirmar=$_POST['requiredconfirm_password'];
         $tipo=$_POST['tipo'];
+        echo $id;
         if($contraseña ===$confirmar){
             $sql="insert into usuarios values($id,'$username','$contraseña','$nombre','$paterno','$materno',$edad,'$telefono','$correo',1,$tipo)";
             if(mysqli_query($link,$sql)){

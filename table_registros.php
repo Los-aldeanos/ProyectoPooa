@@ -73,15 +73,15 @@
               </a>
           </li>
           <li>
-            <a href="citas.php">
-              <i class="fa fa-share"></i>
-              <span>Citas</span>
-              </a>
-          </li>
-          <li>
             <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
+              </a>
+          </li>
+          <li>
+            <a href="regent.php">
+              <i class="fa fa-share"></i>
+              <span>Registro de entradas</span>
               </a>
           </li>
           <li>
@@ -127,8 +127,6 @@
                   $query ="select * from registros order by idRegistros";
 
                   $result=mysqli_query($link,$query);
-                  
-                 
 
                   while($row = mysqli_fetch_array($result)){
                     $iduser=$row["Usuarios_id_usuarios"];

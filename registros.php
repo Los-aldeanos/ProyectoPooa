@@ -1,5 +1,6 @@
 <?php 
   session_start();
+
   if(empty($_SESSION['usuario'])){
     session_start();
     session_destroy();
@@ -18,7 +19,7 @@
   <title>Gym Spartaco</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  <link href="img/FAVI-Spart.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
@@ -34,20 +35,21 @@
 <body>
   <section id="container">
     <!--header start-->
-    <?php 
-     include "header.php";
-    ?>
-    <!--sidebar start-->
+    <?php
+      include "header.php";
+      ?>
     <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
-          <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
+          <?php
+          echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>"
+          ?>
           <li class="mt">
           </li>
           <li>
-            <a class="active" href="table_user.php">
+            <a href="table_user.php">
               <i class="fa fa-th"></i>
               <span>Tabla de usuarios</span>
               </a>
@@ -85,7 +87,7 @@
           <li>
             <a href="usuarios.php">
               <i class="fa fa-check"></i>
-              <span>Creacion de usuario</span>
+              <span>Registrar usuario</span>
               </a>
           </li>
           <li>
@@ -102,92 +104,98 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Editar usuario</h3>
+        <h3><i class="fa fa-angle-right"></i> Registro de entradas</h3>
         <!-- /row -->
         <div class="row mt">
           <div class="col-lg-12">
+            
             <div class="form-panel">
               <div class="form">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="createuser.php">
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Id de usuario</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="user" name="usuario" type="text"required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  <label class="control-label col-md-3">Hora de entrada</label>
+                  <div class="col-md-4">
+                    <input size="16" type="text" value="2014-01-01 10:00" readonly class="form_datetime form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">Hora de salida</label>
+                  <div class="col-md-4">
+                    <input size="16" type="text" value="2014-01-01 10:00" readonly class="form_datetime form-control">
+                  </div>
+                </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Nombre</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="name" name="nombre" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Apellido paterno</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="Ap_pat" name="ap_pat" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Apellido materno</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="Ap_mat" name="ap_mat" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Edad</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="edad" name="edad" type="text" pattern="[1-9][0-9]" title="La edad tiene que ser entre 10-99 años" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Telefono</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="tele" name="telefono" type="tel" pattern="[0-9]{3} [0-9]{3}[0-9]{4}|[0-9]{3} [0-9]{3}[ -][0-9]{4}|[0-9]{10}" title="Numero no valido, el formato requerido es: ??? ??? ???? o ??? ???????"
+                      placeholder="646 546 4659" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label col-lg-2">Contraseña</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="password" name=" password" type="password" required/>
+                    </div>
+                  </div>
 
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="validar.php">
-                  <?php
-                  require_once "config.php";
-                  $id=$_GET['id'];
-                  $query ="select * from usuarios where idusuarios=$id";
-
-                  $result=mysqli_query($link,$query);
-                  while($row = mysqli_fetch_array($result)){
-                    $iduser=$row["idusuarios"];
-                    $username=$row["username"];
-                    $nombre=$row["nombre"];
-                    $ap_pat=$row["ap_paterno"];
-                    $ap_mat=$row["ap_materno"];
-                    $edad=$row["edad"];
-                    $tel=$row["telefono"];
-                    $correo=$row["correo"];
-                    $membresia=$row["id_membresias"];
-                  ?>
                   <div class="form-group ">
-                    <label for="firstname" class="control-label col-lg-2">Id usuario</label>
+                    <label for="confirm_password" class="control-label col-lg-2">Confirma contraseña</label>
                     <div class="col-lg-10">
-                      <input class="form-control" value="<?php echo $iduser; ?>" id="firstname" name="id" type="text" required />
+                      <input class="form-control " id="confirm_password" name="requiredconfirm_password" type="password" required/>
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2" >Usuario</label>
+                    <label for="email" class="control-label col-lg-2">Email</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" value="<?php echo $username; ?>" name="usuario" type="text" required />
+                      <input class="form-control " id="email" name="email" type="email" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Nombre</label>
+                    <label for="username" class="control-label col-lg-2">Tipo de usuario</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $nombre; ?>" name="nombre" type="text" required />
+                      <input class="form-control " id="tipo_user" name="tipo" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido paterno</label>
+                    <label for="username" class="control-label col-lg-2">Membresia</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_pat; ?>" name="paterno" type="text" required />
+                      <input class="form-control " id="membresia" name="membresia" type="text" required />
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido Materno</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_mat; ?>" name="materno" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Edad</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $edad; ?>" name="edad" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Telefono</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $tel; ?>" name="telefono" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Correo</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $correo; ?>" name="correo" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Membresia</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $membresia; ?>" name="mem" type="text" />
-                    </div>
-                  </div>
-                  <?php
-                }
-                ?>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit" name="actualizar">Guardar</button>
-                      <button class="btn btn-theme04" onclick="location='table_user.php'" type="button">Cancelar</button>
+                      <button class="btn btn-theme" type="submit">Guardar</button>
+                      <button class="btn btn-theme04" type="button">Cancelar</button>
                     </div>
                   </div>
                 </form>
@@ -201,22 +209,18 @@
       </section>
       <!-- /wrapper -->
     </section>
-    <br><br><br><br><br><br>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
         <p>
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="blank.html#" class="go-top">
+        <a href="form_validation.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -226,14 +230,13 @@
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="lib/jquery.ui.touch-punch.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="lib/form-validation-script.js"></script>
 
 </body>
 

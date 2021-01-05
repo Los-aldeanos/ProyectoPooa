@@ -72,15 +72,15 @@
               </a>
           </li>
           <li>
-            <a href="citas.php">
-              <i class="fa fa-share"></i>
-              <span>Citas</span>
-              </a>
-          </li>
-          <li>
             <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
+              </a>
+          </li>
+          <li>
+            <a href="regent.php">
+              <i class="fa fa-share"></i>
+              <span>Registro de entradas</span>
               </a>
           </li>
           <li>
@@ -113,24 +113,33 @@
                 <thead>
                   <tr>
                     <th><i class="fa fa-bullhorn"></i> Id usuario</th>
+                    <th><i class="fa fa-bullhorn"></i> Usuario</th>
+                    <th><i class="fa fa-bullhorn"></i> Nombre</th>
+                    <th><i class="fa fa-bullhorn"></i> Apellido paterno</th>
+                    <th><i class="fa fa-bullhorn"></i> Apellido materno</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> Id citas</th>
-                    <th><i class="fa fa-bookmark"></i> Cita</th>
+                    <th><i class="fa fa-bookmark"></i>Fecha de Cita</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                   require_once "config.php";
 
-                  $query ="select * from citas order by idcitas";
+                  $query ="select usuarios.idusuarios,usuarios.username,usuarios.nombre,usuarios.ap_paterno,usuarios.ap_materno, citas.idcitas, citas.citas
+                  FROM citas INNER Join
+                  usuarios ON citas.Usuarios_id_usuarios=usuarios.idusuarios order by citas.idcitas";
 
                   $result=mysqli_query($link,$query);
                   while($row = mysqli_fetch_array($result)){
-                    $iduser=$row["Usuarios_id_usuarios"];
-                    $citas=$row["citas"];
+                    $iduser=$row["idusuarios"];
+                    $username=$row["username"];
+                    $nombre=$row["nombre"];
+                    $paterno=$row["ap_paterno"];
+                    $materno=$row["ap_materno"];
                     $idcitas=$row["idcitas"];
+                    $citas=$row["citas"];
                     
-                    
-                    echo "<tr><td>$iduser </td><td>$idcitas</td><td>$citas</td>";
+                    echo "<tr><td>$iduser</td><td>$username</td><td>$nombre</td><<td>$paterno</td><td>$materno</td><td>$idcitas</td><td>$citas</td>";
                     ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
