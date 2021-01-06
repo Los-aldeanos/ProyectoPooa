@@ -42,7 +42,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
            <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -65,15 +65,15 @@
               </a>
           </li>
           <li>
-            <a href="calendar.php">
-              <i class="fa fa-calendar-o"></i>
-              <span>Calendario</span>
-              </a>
-          </li>
-          <li>
             <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
+              </a>
+          </li>
+          <li>
+            <a href="regcitas.php">
+              <i class="fa fa-share"></i>
+              <span>Registro de citas</span>
               </a>
           </li>
           <li>

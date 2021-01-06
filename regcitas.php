@@ -1,5 +1,6 @@
 <?php 
   session_start();
+
   if(empty($_SESSION['usuario'])){
     session_start();
     session_destroy();
@@ -18,25 +19,29 @@
   <title>Gym Spartaco</title>
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
+  <link href="img/FAVI-Spart.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-fileupload/bootstrap-fileupload.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker/css/datepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-timepicker/compiled/timepicker.css" />
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap-datetimepicker/datertimepicker.css" />
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
-  
+
 </head>
 
 <body>
   <section id="container">
-    
-    <?php
-    include "header.php";
-    ?>
+      <?php
+      include "header.php";
+      ?>
     <!--sidebar start-->
     <aside>
       <div id="sidebar" class="nav-collapse ">
@@ -47,7 +52,7 @@
           <li class="mt">
           </li>
           <li>
-            <a class="active" href="table_user.php">
+            <a href="table_user.php">
               <i class="fa fa-th"></i>
               <span>Tabla de usuarios</span>
               </a>
@@ -71,7 +76,7 @@
               </a>
           </li>
           <li>
-            <a href="regcitas.php">
+            <a class="active" href="regcitas.php">
               <i class="fa fa-share"></i>
               <span>Registro de citas</span>
               </a>
@@ -102,95 +107,59 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Tabla de usuarios</h3>
-        <!-- row -->
+        <h3><i class="fa fa-angle-right"></i> Registro de citas</h3>
         <div class="row mt">
-          <div class="col-md-12">
-            <div class="content-panel">
-              <table class="table table-striped table-advance table-hover">
-                <h4><i class="fa fa-angle-right"></i> Registrados</h4>
-                <thead>
-                  <tr>
-                    <th><i class="fa fa-bullhorn"></i> ID</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i> Usuario</th>
-                    <th><i class="fa fa-bookmark"></i> Nombre</th>
-                    <th><i class=" fa fa-edit"></i> Apellido paterno<o/th>
-                    <th><i class="fa fa-bookmark"></i> Apellido materno</th>
-                    <th><i class="fa fa-bookmark"></i> Edad</th>
-                    <th><i class="fa fa-bookmark"></i> Telefono</th>
-                    <th><i class="fa fa-bookmark"></i> Correo</th>
-                    <th><i class="fa fa-bookmark"></i> Membresias</th>
-                    <th><i class="fa fa-bookmark"></i> Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  require_once "config.php";
-
-                  $query ="select * from usuarios order by idusuarios limit 20";
-
-                  $result=mysqli_query($link,$query);
-                  while($row = mysqli_fetch_array($result)){
-                    $iduser=$row["idusuarios"];
-                    $username=$row["username"];
-                    $nombre=$row["nombre"];
-                    $ap_pat=$row["ap_paterno"];
-                    $ap_mat=$row["ap_materno"];
-                    $edad=$row["edad"];
-                    $tel=$row["telefono"];
-                    $correo=$row["correo"];
-                    $membresia=$row["id_membresias"];
-                    if ($membresia ==0){
-                      $mem="Mensual";
-                    }
-                    elseif ($membresia==1) {
-                      $mem="Bimestral";
-                    }
-                    elseif ($membresia==2) {
-                      $mem="Trimestral";
-                    }
-                    elseif ($membresia==3) {
-                      $mem="Cuatrimestral";
-                    }
-                    elseif ($membresia==99) {
-                      $mem="Sin membresia";
-                    }
-                    
-                    
-                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td><td>$mem</td>";
-                    ?>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
-                    </td>
-                    </tr>
-                      <?php
-                      }
-                  ?>
-                </tbody>
-              </table>
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <form class="form-horizontal  style-form" action="validar.php" method="post">
+                <div class="form-group ">
+                    <label class="control-label col-lg-2">Id de usuario</label>
+                    <div class="col-lg-4">
+                      <input class=" form-control" id="user" name="iduser" type="text" required />
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Fecha de la cita</label>
+                  <div class="col-md-4">
+                    <input  type="text"  readonly class="form_datetime form-control" name="f_entrada" required>
+                  </div>
+                </div>
+                  <div>
+                      <input type="hidden" name="option" value=3>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Guardar</button>
+                      <button class="btn btn-theme04" type="button">Cancelar</button>
+                    </div>
+                  </div>
+              </form>
             </div>
-            <!-- /content-panel -->
+            <!-- /form-panel -->
           </div>
-          <!-- /col-md-12 -->
+          <!-- /col-lg-12 -->
         </div>
-        <!-- /row -->
+        <!-- row -->
       </section>
+      <!-- /wrapper -->
     </section>
-    <!-- /MAIN CONTENT -->   
-    <!--main content end-->
+    <!-- /MAIN CONTENT -->
     <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Gym Spartaco</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+            Licensing information: https://templatemag.com/license/
+          -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
-        <a href="basic_table.html#" class="go-top">
+        <a href="advanced_form_components.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
           </a>
       </div>
@@ -206,7 +175,16 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  
+  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/date.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/moment.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+  <script src="lib/advanced-form-components.js"></script>
+
 </body>
 
 </html>

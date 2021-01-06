@@ -65,15 +65,15 @@
               </a>
           </li>
           <li>
-            <a href="calendar.php">
-              <i class="fa fa-calendar-o"></i>
-              <span>Calendario</span>
-              </a>
-          </li>
-          <li>
             <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
+              </a>
+          </li>
+          <li>
+            <a href="regcitas.php">
+              <i class="fa fa-share"></i>
+              <span>Registro de citas</span>
               </a>
           </li>
           <li>

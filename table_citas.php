@@ -66,15 +66,15 @@
               </a>
           </li>
           <li>
-            <a href="calendar.php">
-              <i class="fa fa-calendar-o"></i>
-              <span>Calendario</span>
-              </a>
-          </li>
-          <li>
             <a href="membresias.php">
               <i class="fa fa-money"></i>
               <span>Membresias</span>
+              </a>
+          </li>
+          <li>
+            <a href="regcitas.php">
+              <i class="fa fa-share"></i>
+              <span>Registro de citas</span>
               </a>
           </li>
           <li>
@@ -143,7 +143,7 @@
                     ?>
                     <td>
                       <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
+                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='modcit.php?id=<?php echo $iduser;?>';"></i></button>
                       <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
                     </td>
                     </tr>
