@@ -43,17 +43,17 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
-           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
+          <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
           <li>
-            <a class="active" href="table_user.php">
+            <a href="table_user.php">
               <i class="fa fa-th"></i>
               <span>Tabla de usuarios</span>
               </a>
           </li>
           <li>
-            <a href="table_registros.php">
+            <a class="active" href="table_registros.php">
               <i class="fa fa-th"></i>
               <span>Tabla de registros</span>
               </a>
@@ -85,7 +85,7 @@
           <li>
             <a href="usuarios.php">
               <i class="fa fa-check"></i>
-              <span>Registrar usuario</span>
+              <span>Creacion de usuario</span>
               </a>
           </li>
           <li>
@@ -102,94 +102,66 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Eliminar usuario</h3>
+        <h3><i class="fa fa-angle-right"></i> Editar registro de entrada</h3>
         <!-- /row -->
         <div class="row mt">
           <div class="col-lg-12">
             <div class="form-panel">
               <div class="form">
 
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="valdelete.php">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="validar.php">
                   <?php
                   require_once "config.php";
                   $id=$_GET['id'];
-                  $query ="select * from usuarios where idusuarios=$id";
+                  $query ="select * from registros where idRegistros=$id";
 
                   $result=mysqli_query($link,$query);
                   while($row = mysqli_fetch_array($result)){
-                    $iduser=$row["idusuarios"];
-                    $username=$row["username"];
-                    $nombre=$row["nombre"];
-                    $ap_pat=$row["ap_paterno"];
-                    $ap_mat=$row["ap_materno"];
-                    $edad=$row["edad"];
-                    $tel=$row["telefono"];
-                    $correo=$row["correo"];
-                    $membresia=$row["id_membresias"];
+                    $iduser=$row["Usuarios_id_usuarios"];
+                    $idreg=$row["idRegistros"];
+                    $f_entrada=$row["Entrada"];
+                    $f_salida=$row["salida"];
+                    $cita=$row["cita"];
                   ?>
                   <div class="form-group ">
                     <label for="firstname" class="control-label col-lg-2">Id usuario</label>
-                    <div class="col-lg-10">
+                    <div class="col-lg-4">
                       <input class="form-control" value="<?php echo $iduser; ?>" id="firstname" name="id" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2" >Usuario</label>
-                    <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" value="<?php echo $username; ?>" name="usuario" type="text" required />
+                    <label for="lastname" class="control-label col-lg-2" >Id registro</label>
+                    <div class="col-lg-4">
+                      <input class=" form-control" id="lastname" value="<?php echo $idreg; ?>" name="idreg" type="text" required />
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Nombre</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $nombre; ?>" name="nombre" type="text" required />
-                    </div>
+                   <div class="form-group">
+                  <label class="control-label col-md-2">Entrada</label>
+                  <div class="col-md-4">
+                    <input  type="text"  readonly class="form_datetime form-control" name="f_entrada" value="<?php echo $f_entrada; ?>" required>
                   </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido paterno</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_pat; ?>" name="paterno" type="text" required />
-                    </div>
+                </div>
+                 <div class="form-group">
+                  <label class="control-label col-md-2">Salida</label>
+                  <div class="col-md-4">
+                    <input  type="text" class="form_datetime form-control" name="f_salida" value="<?php echo $f_salida; ?>" required>
                   </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido Materno</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_mat; ?>" name="materno" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Edad</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $edad; ?>" name="edad" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Telefono</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $tel; ?>" name="telefono" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Correo</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $correo; ?>" name="correo" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Membresia</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $membresia; ?>" name="mem" type="text" />
+                </div>
+                 <div class="form-group ">
+                    <label for="lastname" class="control-label col-lg-2" >Cita</label>
+                    <div class="col-lg-4">
+                      <input class=" form-control" id="lastname" name="cita" value="<?php echo $cita; ?>" name="idreg" type="text" />
                     </div>
                   </div>
                   <div>
-                      <input type="hidden" name="option" value=1>
+                      <input type="hidden" name="option" value="4">
                   </div>
                   <?php
                 }
                 ?>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit" name="actualizar">Eliminar</button>
+                      <button class="btn btn-theme" type="submit" name="actualizar">Guardar</button>
                       <button class="btn btn-theme04" onclick="location='table_user.php'" type="button">Cancelar</button>
                     </div>
                   </div>
@@ -237,6 +209,15 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/date.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-daterangepicker/moment.min.js"></script>
+  <script type="text/javascript" src="lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+  <script src="lib/advanced-form-components.js"></script>
 
 </body>
 

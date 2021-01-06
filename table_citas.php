@@ -43,7 +43,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -141,11 +141,6 @@
                     
                     echo "<tr><td>$iduser</td><td>$username</td><td>$nombre</td><td>$paterno</td><td>$materno</td><td>$idcitas</td><td>$citas</td>";
                     ?>
-                    <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='modcit.php?id=<?php echo $iduser;?>';"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
-                    </td>
                     </tr>
                       <?php
                       }
@@ -163,6 +158,7 @@
     <!-- /MAIN CONTENT -->   
     <!--main content end-->
     <!--footer start-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="site-footer">
       <div class="text-center">
         <p>

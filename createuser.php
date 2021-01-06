@@ -5,7 +5,6 @@
         $username=$_POST['usuario'];
         $sql="select * from usuarios where username='$username'";
         $result=mysqli_query($link,$sql);
-
         $filas=mysqli_num_rows($result);
         if ($filas==0){
         $nombre=$_POST['nombre'];
@@ -18,9 +17,11 @@
         $contraseña=$_POST['password'];
         $confirmar=$_POST['requiredconfirm_password'];
         $tipo=$_POST['tipo'];
+        $membresia=$_POST["membresia"];
         echo $id;
         if($contraseña ===$confirmar){
-            $sql="insert into usuarios values($id,'$username','$contraseña','$nombre','$paterno','$materno',$edad,'$telefono','$correo',1,$tipo)";
+            $sql="insert into usuarios values($id,'$username','$contraseña','$nombre','$paterno','$materno',$edad,'$telefono','$correo',1,$tipo,$membresia)";
+            echo $sql;
             if(mysqli_query($link,$sql)){
             header('location:table_user.php');
             }

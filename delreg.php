@@ -47,13 +47,13 @@
           <li class="mt">
           </li>
           <li>
-            <a class="active" href="table_user.php">
+            <a href="table_user.php">
               <i class="fa fa-th"></i>
               <span>Tabla de usuarios</span>
               </a>
           </li>
           <li>
-            <a href="table_registros.php">
+            <a class="active" href="table_registros.php">
               <i class="fa fa-th"></i>
               <span>Tabla de registros</span>
               </a>
@@ -113,19 +113,14 @@
                   <?php
                   require_once "config.php";
                   $id=$_GET['id'];
-                  $query ="select * from usuarios where idusuarios=$id";
+                  $query ="select * from registros where idRegistros=$id";
 
                   $result=mysqli_query($link,$query);
                   while($row = mysqli_fetch_array($result)){
-                    $iduser=$row["idusuarios"];
-                    $username=$row["username"];
-                    $nombre=$row["nombre"];
-                    $ap_pat=$row["ap_paterno"];
-                    $ap_mat=$row["ap_materno"];
-                    $edad=$row["edad"];
-                    $tel=$row["telefono"];
-                    $correo=$row["correo"];
-                    $membresia=$row["id_membresias"];
+                    $iduser=$row["Usuarios_id_usuarios"];
+                    $id_reg=$row["idRegistros"];
+                    $entrada=$row["Entrada"];
+                    $salida=$row["salida"];
                   ?>
                   <div class="form-group ">
                     <label for="firstname" class="control-label col-lg-2">Id usuario</label>
@@ -134,55 +129,25 @@
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2" >Usuario</label>
+                    <label for="lastname" class="control-label col-lg-2" >ID registro</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" value="<?php echo $username; ?>" name="usuario" type="text" required />
+                      <input class=" form-control" id="lastname" value="<?php echo $id_reg; ?>" name="idreg" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Nombre</label>
+                    <label for="username" class="control-label col-lg-2" >Entrada</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $nombre; ?>" name="nombre" type="text" required />
+                      <input class="form-control " id="username" value="<?php echo $entrada; ?>" name="entrada" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido paterno</label>
+                    <label for="username" class="control-label col-lg-2" >Salida</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_pat; ?>" name="paterno" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Apellido Materno</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $ap_mat; ?>" name="materno" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Edad</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $edad; ?>" name="edad" type="text" required />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Telefono</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $tel; ?>" name="telefono" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Correo</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $correo; ?>" name="correo" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2" >Membresia</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="username" value="<?php echo $membresia; ?>" name="mem" type="text" />
+                      <input class="form-control " id="username" value="<?php echo $salida; ?>" name="paterno" type="text" required />
                     </div>
                   </div>
                   <div>
-                      <input type="hidden" name="option" value=1>
+                      <input type="hidden" name="option" value=2>
                   </div>
                   <?php
                 }
@@ -190,7 +155,7 @@
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                       <button class="btn btn-theme" type="submit" name="actualizar">Eliminar</button>
-                      <button class="btn btn-theme04" onclick="location='table_user.php'" type="button">Cancelar</button>
+                      <button class="btn btn-theme04" onclick="location='table_registros.php'" type="button">Cancelar</button>
                     </div>
                   </div>
                 </form>

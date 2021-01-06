@@ -47,7 +47,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>

@@ -43,7 +43,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -102,156 +102,49 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper site-min-height">
-        <div class="row mt">
+        <div class="row">
           <div class="col-lg-12">
-            <div class="row content-panel">
-              <div class="col-md-4 profile-text mt mb centered">
-                <div class="right-divider hidden-sm hidden-xs">
-                  <h4>1922</h4>
-                  <h6>FOLLOWERS</h6>
-                  <h4>290</h4>
-                  <h6>FOLLOWING</h6>
-                  <h4>$ 13,980</h4>
-                  <h6>MONTHLY EARNINGS</h6>
+            <div>
+              <div class="custom-box">
+                <div class="servicetitle">
+                  <?php echo "<h2>".$_SESSION['usuario'] ."</h2>" ?>
+                  <hr>
                 </div>
-              </div>
-              <!-- /col-md-4 -->
-              <div class="col-md-4 profile-text">
-                <?php echo "<h3>".$_SESSION['usuario'] ."</h3>" ?>
-                <h6>Main Administrator</h6>
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-                <br>
-                <p><button class="btn btn-theme"><i class="fa fa-envelope"></i> Send Message</button></p>
-              </div>
-              <!-- /col-md-4 -->
-              <div class="col-md-4 centered">
-                <div class="profile-pic">
-                  <p><img src="img/ui-sam.jpg" class="img-circle"></p>
-                  <p>
-                    <button class="btn btn-theme"><i class="fa fa-check"></i> Follow</button>
-                    <button class="btn btn-theme02">Add</button>
-                  </p>
+                <div class="icn-main-container">
+                <span class="icn-container"> <img src="img/LOG-Gym.jpg" class="img-circle" width="100"></span>
                 </div>
-              </div>
-              <!-- /col-md-4 -->
-            </div>
-            <!-- /row -->
-          </div>
-          <!-- /col-lg-12 -->
-          <div class="col-lg-12 mt">
-            <div class="row content-panel">
-              <div class="panel-heading">
-                <ul class="nav nav-tabs nav-justified">
-                  <li class="active">
-                    <a data-toggle="tab" href="#edit">Editar perfil</a>
-                  </li>                  
-                </ul>
-              </div>
-              <!-- /tab-pane -->
-                  <div id="edit" class="tab-pane">
-                    <div class="row">
-                      <div class="col-lg-8 col-lg-offset-2 detailed">
-                        <h4 class="mb">Personal Information</h4>
-                        <form role="form" class="form-horizontal">
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label"> Avatar</label>
-                            <div class="col-lg-6">
-                              <input type="file" id="exampleInputFile" class="file-pos">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Company</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="c-name" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Lives In</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="lives-in" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Country</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="country" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Description</label>
-                            <div class="col-lg-10">
-                              <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="col-lg-8 col-lg-offset-2 detailed mt">
-                        <h4 class="mb">Contact Information</h4>
-                        <form role="form" class="form-horizontal">
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 1</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="addr1" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Address 2</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="addr2" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Phone</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="phone" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Cell</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="cell" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="email" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Skype</label>
-                            <div class="col-lg-6">
-                              <input type="text" placeholder=" " id="skype" class="form-control">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-lg-offset-2 col-lg-10">
-                              <button class="btn btn-theme" type="submit">Save</button>
-                              <button class="btn btn-theme04" type="button">Cancel</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <!-- /col-lg-8 -->
-                    </div>
-                    <!-- /row -->
-                  </div>
-                  <!-- /tab-pane -->
-                  </div>
-                  <!-- /tab-pane -->
+                <?php 
+                require_once "config.php";
 
-                </div>
-                <!-- /tab-content -->
+                $user=$_SESSION['usuario'];
+                $sql="select * from usuarios where username='$user'";
+                $result=mysqli_query($link,$sql);
+                while($row = mysqli_fetch_array($result)){
+                  $nombre=$row['nombre'];
+                  $paterno=$row['ap_paterno'];
+                  $materno=$row['ap_materno'];
+                  $edad=$row['edad'];
+                  $tel=$row['telefono'];
+                  $email=$row['correo'];
+                ?>
+                <ul class="pricing">
+                  <li><h3><?php echo "$nombre" ?></h3></li>
+                  <li><h3><?php echo "$paterno" ?></h3></li>
+                  <li><h3><?php echo "$materno" ?></h3></li>
+                  <li><h3><?php echo "$edad" ?></h3></li>
+                  <li><h3><?php echo "$tel" ?></h3></li>
+                  <li><h3><?php echo "$email" ?></h3></li>
+                </ul>
+                <?php
+              }
+                ?>
               </div>
-              <!-- /panel-body -->
+              <!-- end custombox -->
             </div>
-            <!-- /col-lg-12 -->
           </div>
-          <!-- /row -->
+          <!--  /col-lg-12 -->
         </div>
-        <!-- /container -->
-      </section>
-      <!-- /wrapper -->
+        <!--  /row -->
     </section>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
@@ -280,30 +173,6 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  <!-- MAP SCRIPT - ALL CONFIGURATION IS PLACED HERE - VIEW OUR DOCUMENTATION FOR FURTHER INFORMATION -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
-  <script>
-    $('.contact-map').click(function() {
-
-      //google map in tab click initialize
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(40.6700, -73.9400);
-        var mapOptions = {
-          zoom: 11,
-          scrollwheel: false,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-          title: 'Dashio Admin Theme!'
-        });
-      }
-      google.maps.event.addDomListener(window, 'click', initialize);
-    });
-  </script>
 </body>
 
 </html>

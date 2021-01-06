@@ -44,7 +44,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -118,6 +118,7 @@
                     <th><i class="fa fa-bookmark"></i> Entrada</th>
                     <th><i class="fa fa-bookmark"></i> salida</th>
                     <th><i class="fa fa-bookmark"></i> cita</th>
+                    <th><i class="fa fa-bookmark"></i> Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -130,18 +131,17 @@
 
                   while($row = mysqli_fetch_array($result)){
                     $iduser=$row["Usuarios_id_usuarios"];
-                    $username=$row["idRegistros"];
+                    $idregistro=$row["idRegistros"];
                     $entrada=$row["Entrada"];
                     $salida=$row["salida"];
                     $citas=$row["cita"];
                     
                     
-                    echo "<tr><td>$iduser </td><td>$username</td><td>$entrada</td><td>$salida</td><td>$citas</td>";
+                    echo "<tr><td>$iduser </td><td>$idregistro</td><td>$entrada</td><td>$salida</td><td>$citas</td>";
                     ?>
                     <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
+                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='modreg.php?id=<?php echo $idregistro;?>';"></i></button>
+                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delreg.php?id=<?php echo $idregistro;?>';" ></i></button>
                     </td>
                     </tr>
                       <?php

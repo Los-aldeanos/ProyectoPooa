@@ -42,7 +42,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -127,7 +127,9 @@
                   <?php
                   require_once "config.php";
 
-                  $query ="select * from usuarios order by idusuarios limit 20";
+                  $query ="select usuarios.idusuarios,usuarios.username,usuarios.nombre,usuarios.ap_paterno,usuarios.ap_materno,usuarios.edad,usuarios.telefono,usuarios.correo,usuarios.id_membresias, membresia.tipo
+                  FROM membresia INNER Join
+                  usuarios ON membresia.idmembresia=usuarios.id_membresias";
 
                   $result=mysqli_query($link,$query);
                   while($row = mysqli_fetch_array($result)){
@@ -139,28 +141,12 @@
                     $edad=$row["edad"];
                     $tel=$row["telefono"];
                     $correo=$row["correo"];
-                    $membresia=$row["id_membresias"];
-                    if ($membresia ==0){
-                      $mem="Mensual";
-                    }
-                    elseif ($membresia==1) {
-                      $mem="Bimestral";
-                    }
-                    elseif ($membresia==2) {
-                      $mem="Trimestral";
-                    }
-                    elseif ($membresia==3) {
-                      $mem="Cuatrimestral";
-                    }
-                    elseif ($membresia==99) {
-                      $mem="Sin membresia";
-                    }
+                    $membresia=$row["tipo"];
                     
                     
-                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td><td>$mem</td>";
+                    echo "<tr><td>$iduser </td><td>$username</td><td>$nombre</td><td>$ap_pat</td><td>$ap_mat</td><td>$edad</td><td>$tel</td><td>$correo</td><td>$membresia</td>";
                     ?>
                     <td>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                       <button class="btn btn-primary btn-xs"><i class="fa fa-pencil" onclick="location.href='moduser.php?id=<?php echo $iduser;?>';"></i></button>
                       <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o" onclick="location.href='delete.php?id=<?php echo $iduser;?>';" ></i></button>
                     </td>

@@ -44,7 +44,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="perfil.php"><img src="img/LOG-Gym.jpg" class="img-circle" width="80"></a></p>
           <?php echo "<h5 class='centered'>".$_SESSION['usuario'] ."</h5>" ?>
           <li class="mt">
           </li>
@@ -104,85 +104,61 @@
     
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper site-min-height">
-        <div class="row">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Registro de membresias</h3>
+        <div class="row mt">
           <div class="col-lg-12">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Standard</h4>
-                  <hr>
+            <div class="form-panel">
+              <form class="form-horizontal  style-form" action="validar.php" method="post">
+                <div class="form-group ">
+                    <label class="control-label col-lg-2">Id de la membresia</label>
+                    <div class="col-lg-8">
+                      <?php 
+                      require_once "config.php";
+                    $sql = "select MAX(idmembresia) as id from membresia";
+                    $result=mysqli_query($link,$sql);
+                  while($row = mysqli_fetch_array($result)){
+                    $id=$row["id"]+1;
+                    echo "<input class=' form-control' id='user' readonly name='idmem' type='text' value='$id' required />";
+                    }
+                    ?>
+                    
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Nombre</label>
+                  <div class="col-md-8">
+                    <input  type="text" class="form_datetime form-control" name="nombre" required>
+                  </div>
                 </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$25</span>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Precio</label>
+                  <div class="col-md-8">
+                    <input  type="text" class="form_datetime form-control" name="precio" required>
+                  </div>
                 </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
+                <div class="form-group ">
+                    <label class="control-label col-lg-2">Numero de meses</label>
+                    <div class="col-md-8">
+                    <input  type="text" class="form_datetime form-control" name="meses" required>
+                  </div>
+                  </div>
+                  <div>
+                      <input type="hidden" name="option" value=5>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Guardar</button>
+                      <button class="btn btn-theme04" type="button">Cancelar</button>
+                    </div>
+                  </div>
+              </form>
             </div>
-            <!-- end col-4 -->
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Mega Pack</h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$55</span>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-            <!-- end col-4 -->
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>Ultra Pack</h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <span class="icn-container">$98</span>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>150 Mb Storage</li>
-                  <li>1 Domain</li>
-                  <li>2 Sub Domains</li>
-                  <li>3 MySQL DBs</li>
-                  <li>2 Emails</li>
-                  <li>WordPress Installation</li>
-                  <li>24/7 Support</li>
-                </ul>
-                <a class="btn btn-theme" href="#">Order Now</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-            <!-- end col-4 -->
+            <!-- /form-panel -->
           </div>
-          <!--  /col-lg-12 -->
+          <!-- /col-lg-12 -->
         </div>
-        <!--  /row -->
+        <!-- row -->
       </section>
       <!-- /wrapper -->
     </section>
