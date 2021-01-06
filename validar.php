@@ -19,7 +19,7 @@ require_once "config.php";
         else{
             echo "Ocurrio un problema al actualizar";
         }}
-        else{
+        elseif($option==2){
         $idreg=0;
         $id=$_POST['iduser'];
         $entrada=$_POST['f_entrada'];
@@ -32,9 +32,21 @@ require_once "config.php";
             header("location:table_registros.php");
         }
         else{
-            
-            echo $option;
             echo "Ocurrio un problema al ingresar el registro de entrada";
         }}
+        else{
+        $idreg=0;
+        $id=$_POST['iduser'];
+        $cita=$_POST['f_cita'];
+
+        $sql="insert into citas values($idreg,'$cita',$id)";
+        echo $sql;
+        if(mysqli_query($link,$sql)){
+            header("location:table_citas.php");
+        }
+        else{
+            echo "Ocurrio un problema al ingresar el registro de citas";
+        }
+        }
     mysqli_close($link);
 ?>

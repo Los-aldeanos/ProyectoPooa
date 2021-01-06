@@ -121,7 +121,7 @@
                 <div class="form-group">
                   <label class="control-label col-md-2">Fecha de la cita</label>
                   <div class="col-md-4">
-                    <input  type="text"  readonly class="form_datetime form-control" name="f_entrada" required>
+                    <input  type="text"  readonly class="form_datetime form-control" name="f_cita" required>
                   </div>
                 </div>
                   <div>
